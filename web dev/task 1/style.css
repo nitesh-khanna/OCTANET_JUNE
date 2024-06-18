@@ -1,0 +1,260 @@
+body {
+    color: white;
+    margin: 0px;
+    padding: 0px;
+    max-height: 100%;
+    font-family: 'Oswald', sans-serif;
+    animation: animate 20s ease-in-out infinite;  
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+@keyframes animate {
+    0%,100%{
+        background-image: url(/photos/anastase-maragos-9dzWZQWZMdE-unsplash\ \(1\).jpg);
+    }
+    25%{
+        background-image: url(/photos/risen-wang-20jX9b35r_M-unsplash.jpg);
+    }
+    50%{
+        background-image: url(/photos/sven-mieke-jO6vBWX9h9Y-unsplash.jpg);
+    }
+    75%{
+        background-image: url(/photos/danielle-cerullo-CQfNt66ttZM-unsplash.jpg);
+    }
+}
+
+.overlay{
+    background-color: black;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0.2;
+    z-index: -1;
+}
+.header{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.navbar li {
+    display: inline-block;
+}
+
+.navbar li a {
+    text-decoration: none;
+    color: white;
+    font-size: clamp(13px, 3vw, 70px);
+}
+
+.navbar li a:hover,
+.navbar li a.active {
+    text-decoration: underline;
+    color: #55585a;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 11%;
+}
+.left img {
+    width: 65%;
+    filter: invert(100%);
+}
+
+.left div {
+    font-size: clamp(10px, 1.8vw, 40px);
+    text-align: center;
+}
+
+.mid{
+    display: flex;
+    width: 50%;
+}
+
+.right{
+    display: flex;
+    align-items: center;
+    width: max(25%, 165px);
+}
+
+.inp {
+    font-size: clamp(13px, 2vw, 41px);
+    border: 2px solid white;
+    background-color: black;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    border-radius: 10px;
+}
+#search{
+    width: 75%;
+    margin-right: 7px;
+    height: clamp(5px, 4vw, 63px);
+}
+#btn {
+    cursor: pointer;
+    height: clamp(5px, 4.5vw, 69px);
+    width: clamp(34px, 34%, 125px);
+}
+
+.inp:hover {
+    border: 2px solid #9ed8ff;
+}
+
+::placeholder {
+    color: white;
+    text-align: center;
+}
+
+.container-box{
+    display: flex;
+    justify-content: center;
+}
+.container {
+    border: 2px solid white;
+    width: min(85%, 500px);
+    margin-top: 110px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container h1 {
+    text-align: center;
+}
+
+.forms {
+    font-size: clamp(15px, 2.8vw,25px);
+    padding-left: 25px;
+}
+
+form div {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.g{
+    margin-right: 27px;
+    height: clamp(10px, 2vw, 65px);
+    width: clamp(0px, 4vw, 18px);
+}
+.g1{
+    display: flex;
+    align-items: center;
+    margin-left: 45px;
+}
+.sub input {
+    font-size: clamp(15px, 2.8vw,25px);
+    font-family: 'Oswald', sans-serif;
+    width: 200px;
+    margin-left: 15px;
+}
+#reset{
+    margin-right: 15px;
+}
+
+form div input{
+    width: 70%;
+}
+
+#menu{
+    display: none;
+}
+
+.mid label{
+    cursor: pointer;
+    font-size: clamp(13px, 3vw, 70px);
+    display: none;
+}
+
+@media(max-width:520px){
+    .mid label{
+        display: flex;
+        align-items: center;
+    }
+    .navbar{
+        display: none;
+    }
+    #menu:checked~ .navbar{
+        display: flex;
+        flex-direction: column;
+        width: 72%;
+        position: relative;
+        top: 34px;
+    }
+    .mid{
+        justify-content: space-between;
+        width: 34%;
+    }
+
+    #btn{
+        height: clamp(5px,6.9vw,69px);
+    }
+    
+    #search{
+        height: clamp(5px, 5vw, 63px);
+        width: 56%;
+    }
+    .header{
+        height: 10vh;
+    }
+
+    .right{
+        width: 44%;
+        justify-content: space-between;
+    }
+}
+
+@media(max-width:560px){
+    form div{
+        display: flex;
+        flex-direction: column;
+    }
+
+    form div input{
+        width: clamp(100px, 90%, 370px);
+    }
+    
+    .g1{
+        margin-left: 0px;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+    }
+    
+    .sub{
+        margin-right: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .sub input{
+        margin: 0;
+    }
+
+    #reset{
+        margin: 0;
+        margin-top: 5px;
+    }
+    .forms{
+        width: 90%;
+    }
+}
+
